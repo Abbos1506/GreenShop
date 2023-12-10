@@ -3,8 +3,14 @@ import rootIcons from "../utils/rootIcons";
 import rootMenu from "../utils/rootMenu";
 import BtnIcon from "../assets/icons/BtnIcon1.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import Modal from "./modal";
+import { createPortal } from "react-dom";
 
 const Root = () => {
+  const [login, setLogin] = useState("Login")
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="root container">
       <div className="root__nav">
@@ -26,12 +32,15 @@ const Root = () => {
               <img src={item.image} alt="nav icons" />
             </Link>
           ))}
-          <button className="root__nav__btn">
+          <button onClick={() => setOpen(true)} className="root__nav__btn">
             <img src={BtnIcon} alt="button icon" />
-            <p>Login</p>
+            <p>{login}</p>
           </button>
         </div>
       </div>
+      {open && createPortal(<Modal onCancel={() => setOpen(false)} />, 
+      document.body
+      )}
     </div>
   );
 };

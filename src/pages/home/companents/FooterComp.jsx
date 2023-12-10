@@ -16,7 +16,7 @@ const FooterComp = () => {
       <div className="footer__comp__news">
         <div className="news__cards">
           {footerCard.map((item) => (
-            <div className="news__card">
+            <div className="news__card" key={item.id}>
               <div className="news__card__image" key={item.id}>
                 <img src={item.image} alt={item.title} />
               </div>
@@ -65,26 +65,26 @@ const FooterComp = () => {
         <div className="footer__acc">
           <h2 className="footer__acc__title">My Account</h2>
           {footerAcc.map((item) => (
-            <p className="footer__acc__list">{item.title}</p>
+            <p className="footer__acc__list" key={item.id}>{item.title}</p>
           ))}
         </div>
         <div className="footer__help">
           <h2 className="footer__help__title">Help & Guide</h2>
           {footerHelp.map((item) => (
-            <p className="footer__help__list">{item.title}</p>
+            <p className="footer__help__list" key={item.id}>{item.title}</p>
           ))}
         </div>
         <div className="footer__cate">
           <h2 className="footer__cate__title">Categories</h2>
           {footerCate.map((item) => (
-            <p className="footer__cate__list">{item.title}</p>
+            <p className="footer__cate__list" key={item.id}>{item.title}</p>
           ))}
         </div>
         <div className="footer__socials">
           <h2 className="footer__socials__title">Social Media</h2>
           <div className="footer__socials__icons">
             {footerSocials.map((item) => (
-              <i className="footer__socials__icon">{item.image}</i>
+              <i className="footer__socials__icon" key={item.id}>{item.image}</i>
             ))}
           </div>
         </div>
