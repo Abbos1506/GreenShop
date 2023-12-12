@@ -875,6 +875,12 @@ button {
   font-weight: 400;
 }
 
+// tabs start
+
+.modal__tabs {
+  margin: 54px 100px 0;
+}
+
 //  modal start
 
 .modal__out {
@@ -887,6 +893,8 @@ button {
 }
 
 .modal {
+  display: flex;
+  gap: 100px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -918,14 +926,33 @@ button {
 .modal__login {
   padding: 55px 100px;
 
-  &__title {
-    text-align: center;
-    font-family: "maven pro";
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 16px;
-    color: #46a358;
-    cursor: pointer;
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &__log {
+      color: #46a358;
+      font-family: "maven pro";
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 16px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    &__reg {
+      color: #3d3d3d;
+      font-family: "maven pro";
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 16px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
   }
 
   &__text {
@@ -1042,6 +1069,116 @@ button {
         background: #46a358;
         color: #fff;
       }
+    }
+  }
+}
+
+// modal register start
+
+.modal__reg {
+  padding: 52px 100px 40px;
+  display: none;
+
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &__log {
+      color: #3d3d3d;
+      font-family: "maven pro";
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 16px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    &__reg {
+      color: #46a358;
+      font-family: "maven pro";
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 16px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin-top: 35px;
+    font-family: "maven pro";
+    font-size: 13px;
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  &__inputs {
+    margin: 14px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    input {
+      padding: 12px 14px;
+      border-radius: 5px;
+      border: 1px solid #eaeaea;
+      outline: none;
+    }
+  }
+
+  &__btn {
+    margin: 30px auto 36px;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 5px;
+    border: none;
+    background: #46a358;
+    color: #fff;
+    font-family: "maven pro";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    border: 1px solid #46a358;
+    transition: 0.5s;
+
+    &:hover {
+      background: #fff;
+      color: #46a358;
+    }
+  }
+
+  &__or {
+    position: relative;
+
+    p {
+      margin: 0 auto;
+      color: #3d3d3d;
+      font-family: "maven pro";
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 16px;
+      padding: 0 10px;
+      z-index: 1;
+      background: #fff;
+      max-width: max-content;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: #eaeaea;
+      top: 55%;
+      left: 0;
+      z-index: -1;
     }
   }
 }

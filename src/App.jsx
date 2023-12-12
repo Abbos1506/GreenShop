@@ -1,11 +1,13 @@
 import Root from "./companents/root";
-import HomePage from "./pages/home";
+import FooterComp from "./pages/home/companents/FooterComp";
 
 function App() {
   return (
     <>
       <Root />
-      <HomePage/>
+      <div className="footer__app__comp container">
+        <FooterComp/>
+      </div>
     </>
   );
 }
