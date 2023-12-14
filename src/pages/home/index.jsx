@@ -1,5 +1,4 @@
 import BlogPosts from "./companents/BlogPosts";
-import FooterComp from "./companents/FooterComp";
 import HomeCardComp from "./companents/HomeCardComp";
 import HomeHeaderComp from "./companents/HomeHeaderComp";
 import HomeProducts from "./companents/HomeProducts";
@@ -11,7 +10,6 @@ const HomePage = () => {
       <HomeProducts />
       <HomeCardComp />
       <BlogPosts />
-      <FooterComp />
     </div>
   );
 };
