@@ -167,10 +167,16 @@ button {
     font-weight: 700;
     line-height: 20px;
     padding: 10px 27px;
-    border: none;
+    border: 2px solid #46a358;
     border-radius: 6px;
     background: #46a358;
     margin: 44px 0 65px;
+    transition: .5s;
+
+    &:hover {
+      background: #fff;
+      color: #46a358;
+    }
   }
 }
 
@@ -258,8 +264,14 @@ button {
   font-weight: 700;
   line-height: 20px;
   background: #46a358;
-  border: none;
+  border: 2px solid #46a358;
   border-radius: 6px;
+  transition: .5s;
+
+  &:hover {
+    background: #fff;
+    color: #46a358;
+  }
 }
 
 .left__size {
@@ -382,32 +394,37 @@ button {
 }
 
 .right__sort {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
   p {
     color: #3d3d3d;
     font-family: "maven pro";
     font-size: 15px;
     font-weight: 400;
     line-height: 16px;
-    cursor: pointer;
   }
 }
 
 .right__cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 33px;
+  gap: 60px;
   margin-top: 40px;
 }
 
 .right__card {
+  cursor: pointer;
+
   &__image {
-    width: 235px;
-    height: 235px;
+    width: 215px;
+    height: 215px;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      cursor: pointer;
+      border-radius: 10px;
     }
   }
 
@@ -434,6 +451,60 @@ button {
   margin: 60px auto 100px;
   display: flex;
   justify-content: end;
+  gap: 10px;
+}
+
+.pagi__back__btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #46a358;
+  color: #46a358;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'maven pro';
+  transition: .5s;
+
+  &:hover {
+    background: #46a358;
+    color: #fff;
+  }
+}
+
+.pagi__center__numbers {
+  display: flex;
+}
+
+.pagi__link {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #46a358;
+  background: #fff;
+  color: #46a358;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'maven pro';
+  transition: .5s;
+
+  &:hover {
+    background: #46a358;
+    color: #fff;
+  }
+}
+
+.pagi__next__btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #46a358;
+  color: #46a358;
+  font-family: 'maven pro';
+  transition: .5s;
+
+  &:hover {
+    background: #46a358;
+    color: #fff;
+  }
 }
 
 // homeCompCard start
@@ -489,12 +560,18 @@ button {
     padding: 12px 30px;
     color: #fff;
     background: #46a358;
-    border: none;
+    border: 2px solid #46a358;
     border-radius: 6px;
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
     float: right;
+    transition: .5s;
+
+    &:hover {
+      background: #fff;
+      color: #46a358;
+    }
   }
 }
 
@@ -669,7 +746,7 @@ button {
   }
 
   button {
-    padding: 12px 25px;
+    padding: 10.5px 25px;
     color: #fff;
     font-family: "maven pro";
     font-size: 18px;
@@ -677,9 +754,15 @@ button {
     line-height: 16px;
     background: #46a358;
     border-radius: 0 6px 6px 0;
-    border: none;
+    border: 2px solid #46a358;
     position: absolute;
     left: 268px;
+    transition: .5s;
+
+    &:hover {
+      background: #fff;
+      color: #46a358;
+    }
   }
 }
 
@@ -1180,5 +1263,22 @@ button {
       left: 0;
       z-index: -1;
     }
+  }
+}
+ 
+// shop start
+
+.shop__header {
+
+  &__links{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #3d3d3d;
+    font-family: 'maven pro';
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 16px;
+    margin: 36px 0;
   }
 }

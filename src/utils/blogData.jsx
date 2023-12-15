@@ -13,7 +13,7 @@ const blogData = [
     image: BlogImg1,
   },
   {
-    id: 1,
+    id: 2,
     title: "Top 10 Succulents for Your Home",
     text: "Best in hanging baskets. Prefers medium to high light.",
     date: 13,
@@ -21,7 +21,7 @@ const blogData = [
     image: BlogImg2,
   },
   {
-    id: 1,
+    id: 3,
     title: "Cacti & Succulent Care Tips",
     text: "Cacti and succulents thrive in containers and because most are..",
     date: 15,
@@ -29,7 +29,7 @@ const blogData = [
     image: BlogImg3,
   },
   {
-    id: 1,
+    id: 4,
     title: "Best Houseplants Room by Room",
     text: "The benefits of houseplants are endless. In addition to..",
     date: 15,

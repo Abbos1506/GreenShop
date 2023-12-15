@@ -1,11 +1,12 @@
 import cardData from "../../../utils/cardData";
+import { Link } from "react-router-dom"
 
 const HomeCardComp = () => {
   return (
     <div className="homeCardComp">
       <div className="homeComp__cards">
         {cardData.map((item) => (
-          <div className="homeComp__card" key={item.id}>
+          <Link to={item.title} className="homeComp__card" key={item.id}>
             <div className="homeComp__card__image">
                 <img src={item.image} alt={item.title} />
             </div>
@@ -14,7 +15,7 @@ const HomeCardComp = () => {
                 <p className="homeComp__card__info__text">{item.text}</p>
                 <button className="homeComp__card__info__btn">Find More</button>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

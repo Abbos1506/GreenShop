@@ -17,12 +17,13 @@ const Modal = ({ onCancel, setLogin }) => {
   // }
 
   const handlyFinish = () => {
-    if (!(name.length > 0)) {
+    if (name.length == 0) {
       message.success("Success");
       onCancel();
       setLogin("LogOut");
-    } else {
-      message.error("error");
+    }
+    else {
+      message.error("error")
     }
   };
 
@@ -47,18 +48,29 @@ const Modal = ({ onCancel, setLogin }) => {
               className="input"
               type="email"
               placeholder="enter your email"
-              required
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your username!",
+                },
+              ]}
             />
             <input
               name="password"
               type="password"
               placeholder="enter your password"
-              required
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your password!",
+                },
+              ]}
             />
           </div>
           <p className="modal__login__fg">Forgot Password?</p>
           <button
-            type="submit"
+            type="primary"
+            htmlType="submit"
             className="modal__login__btn"
             onClick={handlyFinish}
           >
