@@ -1,6 +1,6 @@
 import footerCard from "../../../utils/footerCard";
 import FooterLogo from "../../../assets/image/navLogo.png";
-import FooterLoc1 from "../../../assets/icons/FooterLoc1.png";
+import FooterLoc from "../../../assets/icons/footerLoc1.png";
 import FooterEmail from "../../../assets/icons/FooterEmail.png";
 import FooterCall from "../../../assets/icons/FooterCall.png";
 import {
@@ -46,7 +46,7 @@ const FooterComp = () => {
         </div>
         <div className="footer__contacts">
           <div className="footer__contacts__location">
-            <img src={FooterLoc1} alt="footer location icon" />
+            <img src={FooterLoc} alt="footer location icon" />
             <p>
               70 West Buckingham Ave. <br /> Farmingdale, NY 11735
             </p>
