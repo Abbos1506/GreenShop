@@ -1,8 +1,8 @@
 import footerCard from "../../../utils/footerCard";
 import FooterLogo from "../../../assets/image/navLogo.png";
 import FooterLoc from "../../../assets/icons/footerLoc1.png";
-import FooterEmail from "../../../assets/icons/FooterEmail.png";
-import FooterCall from "../../../assets/icons/FooterCall.png";
+import FooterEmail from "../../../assets/icons/footerEmail.png";
+import FooterCall from "../../../assets/icons/footerCall.png";
 import {
   footerAcc,
   footerCate,
