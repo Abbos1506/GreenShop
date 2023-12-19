@@ -2,22 +2,19 @@ import {
   PlusOutlined,
   GoogleOutlined,
   FacebookFilled,
+  LockOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
-import { message } from "antd";
+import { Link } from "react-router-dom";
+import { Button, Checkbox, Form, Input } from "antd";
 
-const Modal = ({ onCancel, setLogin }) => {
-  // const [login, setLogin] = useState("modal__login")
-
-  // const handleReg = () => {
-  //   return login.setLogin("modal__reg")
-  // }
-
-  // const onFinish = (values) => {
-  //   console.log(values)
-  // }
+const Modal = ({ onCancel }) => {
+  const onFinish = (values) => {
+    console.log(values);
+  };
 
   const handlyFinish = () => {
-    if (name.length == 0) {
+    if (!(name.length == 0)) {
       message.success("Success");
       onCancel();
       setLogin("LogOut");
@@ -35,86 +32,77 @@ const Modal = ({ onCancel, setLogin }) => {
         </button>
         <div className="modal__login">
           <div className="modal__login__links">
-            <button className="modal__login__links__log">Login</button>
+            <Link to={"/"}>
+              <button className="modal__login__links__log">Login</button>
+            </Link>
             <p>|</p>
-            <button className="modal__login__links__reg">Register</button>
+            <Link to={"/"}>
+              <button className="modal__login__links__reg">Register</button>
+            </Link>
           </div>
           <p className="modal__login__text">
             Enter your username and password to login.
           </p>
-          <div className="modal__login__inputs">
-            <input
-              name="username"
-              className="input"
-              type="email"
-              placeholder="enter your email"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your username!",
-                },
-              ]}
-            />
-            <input
-              name="password"
-              type="password"
-              placeholder="enter your password"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your password!",
-                },
-              ]}
-            />
-          </div>
-          <p className="modal__login__fg">Forgot Password?</p>
-          <button
-            type="primary"
-            htmlType="submit"
-            className="modal__login__btn"
-            onClick={handlyFinish}
+          <Form
+            name="normal_login"
+            className="login-form"
+            initialValues={{
+              remember: true,
+            }}
+            onFinish={onFinish}
           >
-            Login
-          </button>
+            <Form.Item
+              name="username"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your Username!",
+                },
+              ]}
+            >
+              <Input
+                prefix={<UserOutlined className="site-form-item-icon" />}
+                placeholder="Username"
+              />
+            </Form.Item>
+            <Form.Item
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your Password!",
+                },
+              ]}
+            >
+              <Input
+                prefix={<LockOutlined className="site-form-item-icon" />}
+                type="password"
+                placeholder="Password"
+              />
+            </Form.Item>
+            <Form.Item>
+              <Form.Item name="remember" valuePropName="checked" noStyle>
+                <Checkbox>Remember me</Checkbox>
+              </Form.Item>
+
+              <a className="login-form-forgot" href="">
+                Forgot password
+              </a>
+            </Form.Item>
+
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="login-form-button"
+                onClick={handlyFinish}
+              >
+                Log in
+              </Button>
+            </Form.Item>
+          </Form>
           <div className="modal__login__or">
             <p>Or login with</p>
-          </div>
-          <div className="modal__login__socials__btn">
-            <button className="social__btn google">
-              <GoogleOutlined />
-              <p className="social__btn__text">Login with Google</p>
-            </button>
-            <button className="social__btn facebook">
-              <FacebookFilled />
-              <p className="social__btn__text">Login with Facebook</p>
-            </button>
-          </div>
-        </div>
-        {/* modal register start */}
-        <div className="modal__reg">
-          <div className="modal__reg__links">
-            <button className="modal__reg__links__log">Login</button>
-            <p>|</p>
-            <button className="modal__reg__links__reg">Register</button>
-          </div>
-          <p className="modal__reg__text">
-            Enter your email and password to register.
-          </p>
-          <div className="modal__reg__inputs">
-            <input type="text" placeholder="Username" required />
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              required
-            />
-            <input type="password" placeholder="Password" required />
-            <input type="password" placeholder="Confirm Password" required />
-          </div>
-          <button type="submit" className="modal__reg__btn">
-            Register
-          </button>
-          <div className="modal__reg__or">
-            <p>Or register with</p>
           </div>
           <div className="modal__login__socials__btn">
             <button className="social__btn google">
