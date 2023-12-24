@@ -17,10 +17,8 @@ const ProductsLeft = () => {
           ))}
         </div>
         <div className="left__range">
-          <h2 className="range__title">Price Range</h2>
-          <PriceRange />
+          <PriceRange/>
           <p className="range__price">
-            Price: <span>$39 - $1230</span>
           </p>
           <button className="range__button">Filter</button>
         </div>

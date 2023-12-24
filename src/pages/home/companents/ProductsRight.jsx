@@ -7,6 +7,7 @@ import {
   DownOutlined,
   AppstoreAddOutlined,
 } from "@ant-design/icons";
+import ProductsCard from "../../../companents/ProductsCard";
 
 const ProductsRight = () => {
   const [data, setData] = useState(1);
@@ -17,7 +18,6 @@ const ProductsRight = () => {
   const pagiPages = Math.ceil(rightData.length / rightPage);
   const numbers = [...Array(pagiPages + 1).keys()].slice(1);
 
-
   return (
     <div className="productsRight">
       <div className="right__links">
@@ -27,22 +27,19 @@ const ProductsRight = () => {
           <p>Sale</p>
         </div>
         <div className="right__sort">
-          <p>Short by: Default sorting</p>
-          <DownOutlined />
+          <p>Short by:</p>
+          <select name="sort" id="sort">
+            <option value="default">
+              Default sorting <DownOutlined />
+            </option>
+            <option value="expensive">Expensive</option>
+            <option value="cheap">Cheap</option>
+          </select>
         </div>
       </div>
       <div className="right__cards">
-        {Data.map((item) => (
-          <Link to={"/shop"} className="right__card" key={item.id}>
-            <div className="right__card__image">
-              <img src={item.image} alt={item.title} />
-            </div>
-            <p className="right__card__text">{item.title}</p>
-            <p className="right__card__price">{item.price}</p>
-            <button className="right__card__add">
-              <AppstoreAddOutlined />
-            </button>
-          </Link>
+        {Data.map((products) => (
+          <ProductsCard key={products.id} products={products}/>
         ))}
       </div>
       <div className="right__pagination">

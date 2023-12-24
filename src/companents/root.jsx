@@ -1,9 +1,8 @@
 import NavLogo from "../assets/image/navLogo.png";
-import rootIcons from "../utils/rootIcons";
 import rootMenu from "../utils/rootMenu";
 import BtnIcon from "../assets/icons/BtnIcon1.png";
 import { Link, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Modal from "./modal";
 import { createPortal } from "react-dom";
 import IconImg1 from "../assets/icons/navIcon1.png";
@@ -14,13 +13,14 @@ import BlogsPage from "../pages/blogs";
 import PlantsPage from "../pages/plants/index.jsx";
 import BasketPage from "../pages/basket/index.jsx";
 import CheckoutPage from "../pages/checkout/index.jsx";
-import ModalReg from "./modalReg.jsx";
+import {ShoppingCartOutlined} from "@ant-design/icons";
+import CardContext from "../context/cardContext.jsx";
 
 const Root = () => {
   const [login, setLogin] = useState("Login");
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
-  const [basket, setBasket] = useState(0);
+  const { cardItems, showHideCard} = useContext(CardContext)
 
   return (
     <div className="root container">
@@ -41,12 +41,12 @@ const Root = () => {
           <button className="search__button" onClick={() => setSearch(true)}>
             <img src={IconImg1} alt="search icon" className="search__icon" />
           </button>
-          {rootIcons.map((item) => (
-            <Link to={item.path} className="navbar__icons" key={item.id}>
-              <img src={item.image} alt="nav icons" />
-              <p className="navbar__icons__count">{basket}</p>
-            </Link>
-          ))}
+            <Link to={"/savat"} className="navbar__icons">
+              <ShoppingCartOutlined />
+              {cardItems.length > 0 && (
+                <span className="navbar__icons__count">{cardItems.length}</span>
+              )}
+            </Link> 
           <button onClick={() => setOpen(true)} className="root__nav__btn">
             <img src={BtnIcon} alt="button icon" />
             <p>{login}</p>

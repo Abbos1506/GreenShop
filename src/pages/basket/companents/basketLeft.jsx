@@ -1,5 +1,10 @@
+import { useContext } from "react";
+import CardContext from "../../../context/cardContext";
+import Card from './cart'
+
 
 const BasketProductsLeft = () => {
+const { cardItems} = useContext(CardContext)
 
   return (
     <div className="basketProducts__left">
@@ -10,11 +15,9 @@ const BasketProductsLeft = () => {
         <h2 className="basket__left__content__total">Total</h2>
       </div>
       <div className="basket__left__carts">
-        <div className="basket__left__cart">
-          <div className="basket__left__cart__quantity"></div>
-        </div>
-        <div className="basket__left__cart"></div>
-        <div className="basket__left__cart"></div>
+        {cardItems.map((item) => (
+          <Card key={item.id} item={item}/>
+        ))}
       </div>
     </div>
   );
