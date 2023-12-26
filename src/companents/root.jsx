@@ -20,7 +20,7 @@ const Root = () => {
   const [login, setLogin] = useState("Login");
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
-  const { cardItems, showHideCard} = useContext(CardContext)
+  const { cardItems } = useContext(CardContext)
 
   return (
     <div className="root container">

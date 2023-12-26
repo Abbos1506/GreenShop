@@ -4,14 +4,16 @@ import { DeleteOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 
 const cart = ({ item }) => {
   const { removeItem } = useContext(CardContext);
-  const [cardcount, setCardCount] = useState(1)
+  const [cardcount, setCardCount] = useState(1);
+  const [total, setTotal] = useState(item.price);
 
   const minusCount = () => {
-    setCardCount(cardcount === 1 ? 1 : cardcount -1)
-  }
-
+    setTotal(item.price - cardcount)
+    setCardCount(cardcount === 1 ? 1 : cardcount - 1);
+  };
   const plusCount = () => {
-    setCardCount(cardcount + 1)
+    setTotal(item.price * cardcount)
+    setCardCount(cardcount + 1);
   };
 
   return (
@@ -21,7 +23,7 @@ const cart = ({ item }) => {
           <img src={item.image} alt="" />
         </div>
         <h4 className="cartItem__card__title">{item.title}</h4>
-        <p className="cartItem__card__price">{item.price}</p>
+        <p className="cartItem__card__price">${item.price}</p>
         <div className="cartItem__card__quantity">
           <button onClick={minusCount}>
             <MinusOutlined />
@@ -31,7 +33,7 @@ const cart = ({ item }) => {
             <PlusOutlined />
           </button>
         </div>
-        <h3 className="cartItem__card__total">{item.price}</h3>
+        <h3 className="cartItem__card__total">${total}</h3>
         <div className="cartItem__card__btn">
           <button onClick={() => removeItem(item.id)}>
             <DeleteOutlined />

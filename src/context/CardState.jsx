@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import CartContext from "./cardContext";
 import CardReducer from "./CardReducer";
-import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM } from "./Types";
+import { ADD_TO_CART, REMOVE_ITEM } from "./Types";
 
 const CardState = ({ children }) => {
   const initalState = {
@@ -13,10 +13,6 @@ const CardState = ({ children }) => {
 
   const addToCard = (item) => {
     dispatch({ type: ADD_TO_CART, payload: item });
-  };
-
-  const showHideCard = () => {
-    dispatch({ type: SHOW_HIDE_CART });
   };
 
   const removeItem = (id) => {

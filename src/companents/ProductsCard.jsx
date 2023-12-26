@@ -10,7 +10,7 @@ const ProductsCard = ({ products }) => {
         <img src={products.image} alt={products.title} />
       </div>
       <h4 className="products__card__title">{products.title}</h4>
-      <h5 className="products__card__price">{products.price}</h5>
+      <h5 className="products__card__price">${products.price}</h5>
       <div className="products__card__btn">
         <button onClick={() => addToCard(products)}>
           <AppstoreAddOutlined />

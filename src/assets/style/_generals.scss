@@ -465,6 +465,7 @@ button {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 8px;
     }
   }
 
@@ -1910,6 +1911,7 @@ button {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 8px;
     }
   }
 
@@ -1966,12 +1968,12 @@ button {
   }
 
   &__total {
-      margin-right: 45px;
-      color: #46a358;
-      font-family: 'maven pro';
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 16px;
+    margin-right: 45px;
+    color: #46a358;
+    font-family: "maven pro";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
   }
 
   &__btn {
