@@ -13,17 +13,7 @@ const Modal = ({ onCancel }) => {
     console.log(values);
   };
 
-  const handlyFinish = () => {
-    if (!(name.length == 0)) {
-      message.success("Success");
-      onCancel();
-      setLogin("LogOut");
-    }
-    else {
-      message.error("error")
-    }
-  };
-
+  
   return (
     <div className="modal__out" onClick={() => onCancel()}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
@@ -95,7 +85,6 @@ const Modal = ({ onCancel }) => {
                 type="primary"
                 htmlType="submit"
                 className="login-form-button"
-                onClick={handlyFinish}
               >
                 Log in
               </Button>
