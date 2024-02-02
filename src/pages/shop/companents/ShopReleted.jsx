@@ -20,7 +20,7 @@ const ShopReleted = () => {
               <img src={item.image} alt={item.title} />
             </div>
             <h2 className="shop__releted__card__title">{item.title}</h2>
-            <p className="shop__releted__card__price">{item.price}</p>
+            <p className="shop__releted__card__price">${item.price}</p>
           </div>
         ))}
       </div>

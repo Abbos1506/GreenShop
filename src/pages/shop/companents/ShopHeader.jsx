@@ -84,7 +84,7 @@ const ShopHeader = ({ setBasket }) => {
         </div>
         <div className="shop__header__infos">
           <h2 className="info__title">{name}</h2>
-          <p className="info__price">{price}</p>
+          <p className="info__price">${price}</p>
           <h3 className="info__desc__title">Short Description:</h3>
           <p className="info__desc__text">
             The ceramic cylinder planters come with a wooden stand to help
